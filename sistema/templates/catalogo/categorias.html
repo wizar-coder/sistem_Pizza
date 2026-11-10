@@ -19,7 +19,7 @@
         <form method="post" action="{% url 'catalogo:categoria_estado' c.pk %}" {% if c.activo %}data-confirmar="La categoría dejará de mostrarse en nuevas ventas." data-titulo="¿Desactivar categoría?" data-boton="Desactivar"{% endif %}>{% csrf_token %}
           <button class="btn btn-prim btn-sm{% if c.activo %} peligro{% endif %}">{% if c.activo %}Desactivar{% else %}Activar{% endif %}</button></form>{% endif %}
       </td></tr>
-  {% empty %}<tr><td colspan="5" class="vacio">Aún no hay categorías. Crea la primera (por ejemplo: Pollos, Combos, Bebidas).</td></tr>{% endfor %}
+  {% empty %}<tr><td colspan="5" class="vacio">Aún no hay categorías. Crea la primera (por ejemplo: Pizzas, Combos, Bebidas).</td></tr>{% endfor %}
   </tbody>
 </table>
 </div>

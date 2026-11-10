@@ -36,7 +36,7 @@ if not SECRET_KEY:
 ALLOWED_HOSTS = [h.strip() for h in os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if h.strip()]
 CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",") if o.strip()]
 
-# Render inyecta el hostname público del servicio (ej. brase.onrender.com).
+# Render inyecta el hostname público del servicio (ej. pizzabell.onrender.com).
 # Se agrega automáticamente para no tener que copiarlo a mano en cada deploy.
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME", "").strip()
 if RENDER_EXTERNAL_HOSTNAME:
@@ -121,7 +121,7 @@ DATABASES["default"]["ATOMIC_REQUESTS"] = True
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "LOCATION": "brase-locmem",
+        "LOCATION": "pizzabell-locmem",
         "TIMEOUT": 300,
     }
 }

@@ -113,11 +113,11 @@ Después completa permisos/roles por si faltara algo:
 ### Si no puedes activar el acceso remoto
 
 Requiere haber subido el proyecto y creado el entorno virtual (paso 7).
-Sube `db.sqlite3` por SFTP a `/home/TU_CUENTA/www/brase/db.sqlite3`, entra por
+Sube `db.sqlite3` por SFTP a `/home/TU_CUENTA/www/pizzabell/db.sqlite3`, entra por
 SSH y ejecuta el script **desde el servidor**:
 
 ```bash
-cd /home/TU_CUENTA/www/brase
+cd /home/TU_CUENTA/www/pizzabell
 source .venv/bin/activate
 python scripts/migrar_sqlite_a_mysql.py --sqlite db.sqlite3 --env .env --yes
 rm db.sqlite3
@@ -144,17 +144,17 @@ Alwaysdata, no necesitas copiar la carpeta.
 
 WhiteNoise sirve `/static/` desde `staticfiles/`. Las imágenes de productos
 (`/media/`) se atienden con la ruta de producción de Django incluida en
-`config/urls.py`. Para una pollería pequeña es suficiente; si el tráfico crece,
+`config/urls.py`. Para una pizzería pequeña es suficiente; si el tráfico crece,
 mueve `media/` a un sitio de archivos estáticos de Alwaysdata.
 
 ## 7. Publicar la aplicación en Alwaysdata (opcional)
 
 1. Sube el proyecto por SFTP/SSH o clónalo con Git en, por ejemplo:
-   `/home/TU_CUENTA/www/brase`.
+   `/home/TU_CUENTA/www/pizzabell`.
 2. Crea el entorno virtual e instala dependencias:
 
    ```bash
-   cd /home/TU_CUENTA/www/brase
+   cd /home/TU_CUENTA/www/pizzabell
    python -m venv .venv
    source .venv/bin/activate
    pip install -r requirements.txt
@@ -174,13 +174,13 @@ mueve `media/` a un sitio de archivos estáticos de Alwaysdata.
 5. En Alwaysdata → **Web > Sites > Añadir un sitio**:
    - Tipo: **Python WSGI**.
    - Dirección: `tu-cuenta.alwaysdata.net` (o tu dominio).
-   - Ruta de la aplicación: `/home/TU_CUENTA/www/brase/config/wsgi.py`.
-   - Directorio de trabajo: `/home/TU_CUENTA/www/brase`.
-   - Entorno virtual: `/home/TU_CUENTA/www/brase/.venv`.
+   - Ruta de la aplicación: `/home/TU_CUENTA/www/pizzabell/config/wsgi.py`.
+   - Directorio de trabajo: `/home/TU_CUENTA/www/pizzabell`.
+   - Entorno virtual: `/home/TU_CUENTA/www/pizzabell/.venv`.
    - Versión de Python: 3.12 o 3.13.
    - Variables de entorno:
      - `DJANGO_SETTINGS_MODULE=config.settings`
-     - `ENV_FILE=/home/TU_CUENTA/www/brase/.env`
+     - `ENV_FILE=/home/TU_CUENTA/www/pizzabell/.env`
 
 6. Activa HTTPS con Let's Encrypt en Alwaysdata. En `.env` de producción deja:
 

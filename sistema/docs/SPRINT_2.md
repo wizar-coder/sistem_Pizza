@@ -122,7 +122,7 @@ El dashboard ahora muestra datos reales del periodo seleccionado:
 .\.venv\Scripts\python.exe manage.py runserver
 ```
 La migración `ventas.0002_datos_iniciales` crea la Caja principal y los métodos de pago iniciales.
-El dueño local de prueba es `dueno` / `Polleria-Local-2026!`.
+El dueño local de prueba es `dueno` / `PizzaBell-Local-2026!`.
 
 ## 10. Decisiones y límites
 - El pago parcial está permitido; el pago mixto se resuelve registrando pagos adicionales desde el detalle de la venta.

@@ -4,9 +4,8 @@ El repositorio será público. Antes de subirlo, comprueba que no haya secretos 
 datos reales.
 
 > Estructura del repositorio:
-> - Raíz del repo (donde vive `.git`):
->   `D:\polleria sistema\sistema\PANEL ADMINISTRATIVO DEL DUEÑO`
-> - Código del proyecto: `...\PANEL ADMINISTRATIVO DEL DUEÑO\sistema`
+> - Raíz del repo (donde vive `.git`): la carpeta que contiene `sistema/`.
+> - Código del proyecto: la subcarpeta `sistema`.
 >
 > Los comandos de **Git** (`git add`, `git commit`, `git push`) se ejecutan en la
 > raíz del repo. Los comandos de **Django** (`manage.py`, `pip`, tests) se
@@ -42,7 +41,7 @@ Si `git status` muestra `.env`, `db.sqlite3` o `backups/`, no hagas commit: revi
 git init
 git add .
 git status
-git commit -m "Sistema de pollería BRASÉ con Django, MySQL y despliegue en Render"
+git commit -m "Sistema de pizzería PIZZA BELL con Django, MySQL y despliegue en Render"
 git branch -M main
 ```
 
@@ -55,14 +54,14 @@ documentación; **no** los archivos ignorados.
 En GitHub:
 
 1. **New repository**.
-2. Nombre, por ejemplo `brase-polleria`.
+2. Nombre, por ejemplo `pizza-bell`.
 3. Visibilidad: **Public**.
 4. No marques “Add a README”, `.gitignore` ni licencia (ya existen en local).
 
 Luego:
 
 ```powershell
-git remote add origin https://github.com/TU_USUARIO/brase-polleria.git
+git remote add origin https://github.com/TU_USUARIO/pizza-bell.git
 git push -u origin main
 ```
 

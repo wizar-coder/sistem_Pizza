@@ -13,12 +13,12 @@ def ruta_logo(instance, filename):
 
 
 class Configuracion(models.Model):
-    """Datos generales de la pollería. Existe un único registro (pk=1)."""
+    """Datos generales de la pizzería. Existe un único registro (pk=1)."""
 
     MONEDAS = [("PEN", "Sol peruano (PEN)")]
     ZONAS = [("America/Lima", "Lima, Perú (America/Lima)")]
 
-    nombre_comercial = models.CharField("Nombre comercial", max_length=120, default="Mi pollería")
+    nombre_comercial = models.CharField("Nombre comercial", max_length=120, default="PIZZA BELL")
     razon_social = models.CharField("Razón social", max_length=150, blank=True)
     ruc = models.CharField(
         "RUC", max_length=11, blank=True,

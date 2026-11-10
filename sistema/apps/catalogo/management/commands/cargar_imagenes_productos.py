@@ -16,9 +16,11 @@ def normalizar(texto):
 
 MANUAL = {
     "chicha morada": ["chicha morada (jarra)", "chicha morada (vaso)"],
+    "limonada": ["limonada (jarra)"],
     "personal inka kola": ["inca kola 500 ml"],
-    "pollo combo familiar": ["combo familiar"],
-    "pollo entero": ["pollo entero"],
+    "alitas bbq": ["alitas bbq (8 uds)"],
+    "alitas acevichadas": ["alitas acevichadas (8 uds)"],
+    "pan de ajo": ["pan de ajo"],
     "porcion de ensalada": ["ensalada fresca"],
     "porcion de papa": ["papas fritas"],
 }

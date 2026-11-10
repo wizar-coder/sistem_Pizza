@@ -1,4 +1,4 @@
-# Sistema Integral de Gestión para Pollería — BRASÉ
+# Sistema Integral de Gestión para Pizzería — PIZZA BELL
 
 Paneles de dueño, caja y cocina: autenticación, usuarios, roles y permisos
 (RBAC), productos, categorías, configuración, auditoría, dashboard,
@@ -26,10 +26,14 @@ cd sistema
 .\.venv\Scripts\python.exe manage.py runserver
 ```
 
-Abre http://127.0.0.1:8000 e inicia sesión con la cuenta del dueño.
+Abre http://127.0.0.1:8000 e inicia sesión con la cuenta del dueño. Si la base
+está vacía, créala con:
 
-El dueño local de prueba es `dueno` / `Polleria-Local-2026!`. **Cambia esa
-contraseña antes de usar el sistema en producción.**
+```powershell
+.\.venv\Scripts\python.exe manage.py crear_dueno --usuario dueno --nombres "Dueño" --apellidos "Pizza Bell"
+```
+
+**Cambia esa contraseña antes de usar el sistema en producción.**
 
 La migración `ventas.0002_datos_iniciales` crea la **Caja principal** y los
 métodos de pago iniciales (Efectivo, Tarjeta, Transferencia y Yape/Plin). La

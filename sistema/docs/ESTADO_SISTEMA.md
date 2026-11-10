@@ -1,7 +1,7 @@
-# Estado del sistema — Pollería
+# Estado del sistema — Pizzería PIZZA BELL
 
 **Actualizado:** 5 de noviembre de 2026  
-**Proyecto:** `D:\polleria sistema\sistema\PANEL ADMINISTRATIVO DEL DUEÑO\sistema` (repo raíz en `...\PANEL ADMINISTRATIVO DEL DUEÑO`)  
+**Proyecto:** `E:\sistema pizza\sistema_Free\sistema` (repo raíz en `E:\sistema pizza\sistema_Free`)  
 **Estado:** Fase 2 completa y Fase 3 en desarrollo. Paneles de dueño, caja, cocina y mesero operativos.
 
 ## 1. Resumen ejecutivo
@@ -35,7 +35,7 @@ El sistema es una sola aplicación Django con módulos internos que comparten us
 | Zona horaria | America/Lima |
 | Modo local | `DEBUG=True` |
 | Servidor | Detenido; puerto 8000 libre |
-| Usuario dueño local | `dueno` / `Polleria-Local-2026!` |
+| Usuario dueño local | `dueno` / `PizzaBell-Local-2026!` |
 
 Para iniciar:
 

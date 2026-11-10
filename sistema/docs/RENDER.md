@@ -17,7 +17,7 @@ Archivos ya preparados:
 - `.python-version`: fija Python 3.12.6 (Django 5.2 no soporta 3.14).
 - `config/settings.py`: agrega automáticamente `RENDER_EXTERNAL_HOSTNAME` a
   `ALLOWED_HOSTS` y `CSRF_TRUSTED_ORIGINS`.
-- `config/urls.py`: sirve `/media/` en producción (para una pollería pequeña).
+- `config/urls.py`: sirve `/media/` en producción (para una pizzería pequeña).
 
 ## 1. Subir el proyecto a GitHub
 
@@ -30,11 +30,11 @@ Sigue [GITHUB.md](GITHUB.md). El repositorio puede ser público; no subas
 Todo se hace desde el dashboard, **sin Blueprint**.
 
 1. Render Dashboard → **New** → **Project**.
-   - Project name: `brase-polleria`.
+   - Project name: `pizza-bell`.
    - Environment name: `production`.
-2. Dentro del proyecto `brase-polleria` / `production` → **New** → **Web Service**.
+2. Dentro del proyecto `pizza-bell` / `production` → **New** → **Web Service**.
 3. Conecta el repositorio y completa:
-   - **Name:** `brase-polleria` (único en tu workspace).
+   - **Name:** `pizza-bell` (único en tu workspace).
    - **Language / Runtime:** **Python 3**.
    - **Root Directory:** `sistema`.
    - **Region:** **Frankfurt** (la más cercana a Alwaysdata).
@@ -57,7 +57,7 @@ Todo se hace desde el dashboard, **sin Blueprint**.
 8. **Create Web Service**.
 
 > Si ya tienes un Web Service creado, muévelo con **••• → Move →
-> brase-polleria / production**.
+> pizza-bell / production**.
 >
 > El plan **Free** (0.1 CPU / 512 MB) alcanza para el monolito. Se duerme tras
 > ~15 min sin tráfico y el primer acceso tarda ~1 min. Un workspace Hobby admite
@@ -198,7 +198,7 @@ Opcional, si más adelante quieres subida persistente:
 ## 9. Flujo de despliegue
 
 1. `git push` a GitHub.
-2. En Render: **New → Project** (`brase-polleria` / `production`) y dentro
+2. En Render: **New → Project** (`pizza-bell` / `production`) y dentro
    **New → Web Service**.
 3. Render reconstruye con `bash build.sh`.
 4. Render arranca con `migrate` + `inicializar` + `gunicorn`.

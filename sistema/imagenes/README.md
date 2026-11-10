@@ -1,7 +1,7 @@
 # Carpeta de imágenes de productos
 
 Coloca aquí las fotos de los productos con un nombre que coincida con el
-producto (por ejemplo `pollo entero.png`, `chicha morada.png`). Luego ejecuta:
+producto (por ejemplo `pizza margarita.png`, `alitas bbq.png`). Luego ejecuta:
 
 ```powershell
 .\.venv\Scripts\python.exe manage.py cargar_imagenes_productos
