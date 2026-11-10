@@ -1,6 +1,7 @@
 {% extends panel_base %}
 {% load nucleo_tags %}
 {% block titulo %}Inicio de caja{% endblock %}
+{% block body_class %}app panel-caja caja-inicio inicio-panel{% endblock %}
 {% block cabecera %}Inicio de caja{% endblock %}
 {% block contenido %}
 <div class="barra-acciones">
@@ -34,7 +35,7 @@
   </section>
   <section class="tarjeta">
     <h2>Accesos rápidos</h2>
-    <ul class="lista-simple">
+    <ul class="lista-simple accesos-rapidos">
       <li><a href="{% url 'caja:historial' %}">Historial de ventas</a></li>
       <li><a href="{% url 'caja:caja_movimientos' %}">Movimientos de caja</a></li>
       <li><a href="{% url 'caja:caja_cerrar' %}">Cierre de caja</a></li>
