@@ -11,11 +11,11 @@
     <select name="estado" aria-label="Estado"><option value="">Todos los estados</option>
       <option value="activo"{% if f.estado == "activo" %} selected{% endif %}>Activos</option>
       <option value="inactivo"{% if f.estado == "inactivo" %} selected{% endif %}>Inactivos</option></select>
-    <button class="btn btn-sec">Filtrar</button>
+    <button class="btn btn-sec btn-filtrar">Filtrar</button>
     {% if f.q or f.categoria or f.estado %}<a class="enlace" href="{% url 'catalogo:productos' %}">Limpiar</a>{% endif %}
   </form>
   <div class="grupo-botones">
-    {% if puede_exportar %}<a class="btn btn-sec" href="{% url 'catalogo:productos_exportar' %}?{{ qs }}">Exportar CSV</a>{% endif %}
+    {% if puede_exportar %}<a class="btn btn-sec btn-exportar" href="{% url 'catalogo:productos_exportar' %}?{{ qs }}">Exportar CSV</a>{% endif %}
     {% if 'productos.crear' in permisos %}<a class="btn btn-prim" href="{% url 'catalogo:producto_crear' %}">Nuevo producto</a>{% endif %}
   </div>
 </div>
@@ -32,10 +32,10 @@
       <td>{% if p.activo %}<span class="insignia ok">Activo</span>{% else %}<span class="insignia off">Inactivo</span>{% endif %}</td>
       <td>{{ p.actualizado|date:"d/m/Y H:i" }}</td>
       <td class="acciones">
-        {% if 'productos.editar' in permisos %}<a class="btn-accion" href="{% url 'catalogo:producto_editar' p.pk %}">Editar</a>{% endif %}
+        {% if 'productos.editar' in permisos %}<a class="btn-accion editar" href="{% url 'catalogo:producto_editar' p.pk %}">Editar</a>{% endif %}
         {% if 'productos.desactivar' in permisos %}
         <form method="post" action="{% url 'catalogo:producto_estado' p.pk %}" {% if p.activo %}data-confirmar="Dejará de estar disponible en nuevas ventas." data-titulo="¿Desactivar {{ p.nombre }}?" data-boton="Desactivar"{% endif %}>{% csrf_token %}
-          <button class="btn-accion{% if p.activo %} peligro{% endif %}">{% if p.activo %}Desactivar{% else %}Activar{% endif %}</button></form>{% endif %}
+          <button class="btn-accion{% if p.activo %} peligro{% else %} exito{% endif %}">{% if p.activo %}Desactivar{% else %}Activar{% endif %}</button></form>{% endif %}
       </td></tr>
   {% empty %}<tr><td colspan="7" class="vacio">No hay productos con esos filtros.</td></tr>{% endfor %}
   </tbody>

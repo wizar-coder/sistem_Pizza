@@ -1,6 +1,7 @@
 {% extends panel_base %}
 {% load nucleo_tags %}
 {% block titulo %}Dashboard{% endblock %}
+{% block body_class %}app panel-admin dashboard{% endblock %}
 {% block cabecera %}Dashboard{% endblock %}
 {% block contenido %}
 {% if pendientes %}
@@ -51,7 +52,7 @@
       <dt>Zona horaria</dt><dd>{{ config.get_zona_horaria_display }}</dd>
     </dl>
     <h3>Usuarios activos por rol</h3>
-    <ul class="lista-simple">{% for r in por_rol %}<li><span>{{ r.nombre }}</span><strong>{{ r.n }}</strong></li>{% endfor %}</ul>
+    <ul class="lista-simple roles-lista">{% for r in por_rol %}<li><span>{{ r.nombre }}</span><strong>{{ r.n }}</strong></li>{% endfor %}</ul>
   </section>
 </div>
 {% else %}
@@ -93,7 +94,7 @@
   </section>
   <section class="tarjeta">
     <h2>Accesos rápidos</h2>
-    <ul class="lista-simple">
+    <ul class="lista-simple accesos-rapidos">
       {% if 'ventas.crear' in permisos %}<li><a href="{% url 'ventas:nueva_venta' %}">Nueva venta</a></li>{% endif %}
       {% if 'ventas.ver' in permisos %}<li><a href="{% url 'ventas:historial' %}">Historial de ventas</a></li>{% endif %}
       {% if 'pedidos.ver' in permisos %}<li><a href="{% url 'ventas:pedidos' %}">Pedidos</a></li>{% endif %}
